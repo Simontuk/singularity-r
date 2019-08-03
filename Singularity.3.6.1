@@ -27,7 +27,16 @@ From: ubuntu:16.04
     libjpeg62-turbo \
     rsync \
     wget \
-    vi 
+    vi \
+    libxml2-dev \
+    libcairo2-dev \
+    libsqlite3-dev \
+    libmariadbd-dev \
+    libmariadb-client-lgpl-dev \
+    libpq-dev \
+    libssh2-1-dev \
+    unixodbc-dev \
+    libsasl2-dev
 
   # Configure default locale
   echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen
@@ -73,7 +82,19 @@ From: ubuntu:16.04
   ln -s /usr/local/lib/R/site-library/littler/bin/r /usr/local/bin/r
   ## TEMPORARY WORKAROUND to get more robust error handling for install2.r prior to littler update
   curl -O /usr/local/bin/install2.r https://github.com/eddelbuettel/littler/raw/master/inst/examples/install2.r
-  ##chmod +x /usr/local/bin/install2.r
+  chmod +x /usr/local/bin/install2.r
 
+  # adding ARC default libraries
+  install2.r --error \
+    --deps TRUE \
+    tidyverse \
+    dplyr \
+    devtools \
+    formatR \
+    remotes \
+    selectr \
+    caTools \
+    BiocManager
+    
   # Clean up
   rm -rf /var/lib/apt/lists/*
