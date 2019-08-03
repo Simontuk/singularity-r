@@ -1,5 +1,5 @@
 BootStrap: docker
-From: ubuntu:16.04
+From: ubuntu:18.04
 
 %labels
   Maintainer Robert Settlage
@@ -24,9 +24,6 @@ From: ubuntu:16.04
     locales \
     libtiff5 \
     libpng16-16 \
-    libjpeg62-turbo \
-    rsync \
-    wget \
     libxml2-dev \
     libcairo2-dev \
     libsqlite3-dev \
@@ -57,8 +54,6 @@ From: ubuntu:16.04
     r-doc-html=${R_VERSION}* \
     libcurl4-openssl-dev \
     libssl-dev \
-    libxml2-dev \
-    libcairo2-dev \
     libxt-dev \
 
   # Add a default CRAN mirror
