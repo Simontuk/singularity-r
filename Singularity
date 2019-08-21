@@ -35,8 +35,7 @@ IncludeCmd: yes
 
   yum groupinstall -y "Development Tools"
   yum install -y libcurl-devel openssl-devel libxml2-devel hdf5-devel libssh2-devel
-  yum install -y libpng-devel  \
-                 libjpeg-turbo-devel
+  yum install -y libpng-devel libjpeg-turbo-devel cairo-devel
 
   yum install -y R
 
